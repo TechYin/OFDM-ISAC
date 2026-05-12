@@ -37,7 +37,7 @@ SVR_Threshold = 500;
 HighSVRnum = find(SVR_rand > SVR_Threshold);
 RandPosition(HighSVRnum) = [];
 idx = randperm(length(RandPosition),PatternsNumAftClean); 
-selectPosition = RandPosition(idx);                  % 屏蔽掉SVR超过300的位置后，随机抽取的位置
+selectPosition = RandPosition(idx);                  % 屏蔽掉SVR超过SVR_Threshold的位置后，随机抽取的位置
 plot(selectPosition,SVR_rand(selectPosition), 'ro'); % 红色圆圈标记条件数最大的前popSize个位置（用于生成初始种群）
 pop = pop(:,selectPosition);
 
